@@ -1,12 +1,17 @@
 import React from 'react';
-
-import { Button } from '../../components/';
+import { Container, AccordionContainer, AccordionItem } from './styles';
+import { Accordion, Icon } from '../../components/';
 
 const Home = () => {
   return (
-    <div style={{margin: '50px auto', width: '250px'}}>
-      <Button onClick={() => console.log('button work')} text="Click me for test"/>
-    </div>
+    <Container>
+      <AccordionContainer>
+        <Accordion title="Test title" description={
+          //Здесь можно как написать, так и включить любой компонент, который необходимо отображать внутри
+          <AccordionItem><Icon type="Globus"/><p className="text">Body</p></AccordionItem>
+        }/>
+      </AccordionContainer>
+    </Container>
   )
 }
 
